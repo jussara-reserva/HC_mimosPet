@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mimo’s Pet</title>
+
+    <!-- ICONS -->
+    <link rel="icon" type="favicon" href="assets/images/favicon2.ico" />
+    <link rel="stylesheet" href="assets/fonts/style.css" />
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Raleway:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header id="header">
+      <nav class="container">
+        <a class="logo" href="#">Mimo’s Pet</a>
+        <div class="menu">
+          <ul>
+            <li><a href="#sectionHome" class="menu-item">Início</a></li>
+            <li><a href="#sectionProducts" class="menu-item">Produtos</a></li>
+            <li><a href="#sectionContact" class="menu-item">Contato</a></li>
+            <li>
+              <a class="menu-item countCart"
+                ><i class="icon-shopping-cart"></i
+                ><span id="quantityCart"></span
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <!-- HOME -->
+      <section id="sectionHome">
+        <div class="container">
+          <h1>Venha conferir</h1>
+          <p>
+            os melhores preços e produtos para o seu melhor amigo, porque ele
+            merece!
+          </p>
+        </div>
+        <!-- <div id="subscribe" class="subscribe">
+          <p>Inscreva-se e receba todas as nossas ofertas em primeira mão!</p>
+          <form id="subscribe-form" class="container">
+            <div id="name">
+              <label for="name">Nome:</label>
+              <input  id="input-name" type="text" placeholder="Digite o seu nome" required />
+            </div>
+
+            <div id="email">
+              <label for="name">E-mail:</label>
+              <input id="input-email" type="email" placeholder="Digite o seu e-mail" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
+            </div>
+
+            <button type="submit">Cadastrar</button>
+          </form>
+        </div> -->
+      </section>
+
+      <!-- OFFERTS -->
+      <section id="sectionProducts" class="container">
+        <h3>Tudo que o seu bichinho precisa</h3>
+        <div class="categories">
+          <p class="category">Alimentação</p>
+          <p class="category">Saúde</p>
+          <p class="category">Diversão</p>
+        </div>
+
+        <div class="products">
+          <h2>Produtos</h2>
+          <div id="cardsProducts" class="cardsProducts"></div>
+          <button class="clearCartButton" type="submit" onclick="clearCart()">
+            Limpar o carrinho
+          </button>
+        </div>
+      </section>
+
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <div id="subscribe" class="subscribe">
+            <form id="subscribe-form" class="container" onsubmit="addClient()">
+              <div id="name">
+                <label for="name">Nome completo</label>
+                <input
+                  id="input-name"
+                  type="text"
+                  placeholder="xxxxxxx xxxxxxxxxxx xxxxxx"
+                  required
+                />
+              </div>
+              <div id="birth-date">
+                <label for="birth-date">Data de nascimento</label>
+                <input
+                  id="input-birth-date"
+                  type="text"
+                  placeholder="DD/MM/AAAA"
+                  minlength="10"
+                  maxlength="10"
+                  required
+                />
+              </div>
+              <div id="contact">
+                <label for="contact">Celular</label>
+                <input
+                  id="input-contact"
+                  type="text"
+                  placeholder="Apenas números"
+                  required
+                />
+              </div>
+              <div id="email">
+                <label for="name">E-mail</label>
+                <input
+                  id="input-email"
+                  type="text"
+                  placeholder="xxxxxxxxx@xxxxxxxxxx.xxx"
+                  required
+                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                />
+              </div>
+              <div id="cep">
+                <label for="cep">CEP</label>
+                <input
+                  id="input-cep"
+                  type="text"
+                  placeholder="Apenas números"
+                  minlength="8"
+                  maxlength="8"
+                  onblur="searchCep(this.value)"
+                  required
+                />
+              </div>
+              <div id="state">
+                <label for="state">UF</label>
+                <input
+                  id="input-state"
+                  type="text"
+                  minlength="2"
+                  maxlength="2"
+                  placeholder="xx"
+                  required
+                />
+                <!-- <select name="states" id="input-states" required>
+                  <option value="AC">AC</option>
+                  <option value="AL">AL</option>
+                  <option value="AP">AP</option>
+                  <option value="AM">AM</option>
+                  <option value="BA">BA</option>
+                  <option value="CE">CE</option>
+                  <option value="DF">DF</option>
+                  <option value="ES">ES</option>
+                  <option value="GO">GO</option>
+                  <option value="MA">MA</option>
+                  <option value="MT">MT</option>
+                  <option value="MS">MS</option>
+                  <option value="MG">MG</option>
+                  <option value="PA">PA</option>
+                  <option value="PB">PB</option>
+                  <option value="PR">PR</option>
+                  <option value="PE">PE</option>
+                  <option value="PI">PI</option>
+                  <option value="RJ">RJ</option>
+                  <option value="RN">RN</option>
+                  <option value="RS">RS</option>
+                  <option value="RO">RO</option>
+                  <option value="RR">RR</option>
+                  <option value="SC">SC</option>
+                  <option value="SP">SP</option>
+                  <option value="SE">SE</option>
+                  <option value="TO">TO</option>
+                </select> -->
+              </div>
+              <div id="street">
+                <label for="street">Logradouro</label>
+                <input
+                  id="input-street"
+                  type="text"
+                  placeholder="xxxxxxx xxxxxxxxxxx xxxxxx"
+                  required
+                />
+              </div>
+              <div id="district">
+                <label for="district">xxxxxxx xxxxxxx</label>
+                <input
+                  id="input-district"
+                  type="text"
+                  placeholder="Digite o seu bairro"
+                  required
+                />
+              </div>
+              <div id="city">
+                <label for="name">xxxxxxxxxxx</label>
+                <input
+                  id="input-city"
+                  type="text"
+                  placeholder="Digite o seu município"
+                  required
+                />
+              </div>
+              <div id="number">
+                <label for="number">Nº</label>
+                <input
+                  id="input-number"
+                  type="text"
+                  placeholder="xxx"
+                  required
+                />
+              </div>
+
+              <button type="submit">Cadastrar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTACT / FOOTER -->
+      <section id="sectionContact">
+        <div class="contacts-commerce container">
+          <div>
+            <a class="logo" href="#">Mimo’s Pet</a>
+            <a class="website" href="#">mimospet.com.br</a>
+          </div>
+
+          <ul>
+            <li>
+              <a href="tel:5599999999999" target="_blank"
+                ><i class="icon-map-pin-1"></i>(99) 99999-9999</a
+              >
+            </li>
+            <li>
+              <a href="mailto:suaessencia@contato.com" target="_blank"
+                ><i class="icon-mail-1"></i>mimospet@contato.com</a
+              >
+            </li>
+            <li>
+              <a href="https://www.instagram.com" target="_blank"
+                ><i class="icon-instagram-1"></i>mimospet</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="contacts-dev">
+          <p>Desenvolvido por <span>Jussara Rodrigues</span></p>
+
+          <ul>
+            <li>
+              <a
+                href="https://github.com/jussararodrigues"
+                title="Github"
+                target="_blank"
+                ><i class="icon-jam_github-square"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/jussararodrigues-silva"
+                title="Linkedin"
+                target="_blank"
+                ><i class="icon-jam_linkedin-square"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="https://instagram.com/jussara.rr"
+                title="Instagram"
+                target="_blank"
+                ><i class="icon-instagram-1"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <!-- JS -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
