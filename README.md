@@ -23,7 +23,7 @@
 #### Outros recursos utilizados:
 
 - [ViaCEP API](https://viacep.com.br/) para preenchimento automático de endereços a partir do CEP informado.
-- Arquivo JSON inspirado em resultados da [Fake Store API](https://fakestoreapi.com/) com dados dos produtos a serem exibidos (products.json).
+- [My JSON Server](https://my-json-server.typicode.com/) para simular uma REST API na busca pelos [produtos](https://my-json-server.typicode.com/jussararodrigues/hc-mimosPet/products) a serem exibidos no sistema.
 
 #### Funcionalidades: 
 
@@ -65,8 +65,8 @@ Value:
 ]
 ~~~
 
-- Limpeza do carrinho de compras, que consiste na exclusão da Key/Value de produtos
-- Preenchimento automático dos campos de endereço do cliente, mediante o informe de um número de CPF válido
+- Limpeza do carrinho de compras, que consiste na exclusão da Key/Value de produtos.
+- Preenchimento automático dos campos de endereço do cliente, mediante o informe de um número de CPF válido e real.
 
 ---
 
