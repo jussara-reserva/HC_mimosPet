@@ -165,7 +165,7 @@ nav {
 } */
 .subscribe #name,
 .subscribe #email,
-.subscribe #street {
+.subscribe #public-area {
   width: 100%;
 }
 .subscribe #contact,
@@ -211,9 +211,6 @@ nav {
 }
 
 .modal {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: fixed;
   z-index: 1;
   left: 0;
