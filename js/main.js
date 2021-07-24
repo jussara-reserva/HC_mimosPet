@@ -1,24 +1,22 @@
+const options = {
+  method: 'GET',
+  mode: 'cors',
+  cache: 'default'
+}
+
+let modal = document.getElementById('myModal')
+modal.style.display = 'none'
+
+// CLIENT ======================================================
 window.onload = () => {
   let localStorageClient = JSON.parse(localStorage.getItem('client'))
-  let modal = document.getElementById('myModal')
-  // let span = document.getElementsByClassName('close')[0]
 
   if (
     localStorageClient == null ||
     Object.keys(localStorageClient).length === 0
   ) {
     modal.style.display = 'block'
-
-    // span.onclick = function () {
-    //   modal.style.display = 'none'
-    // }
   }
-}
-
-const options = {
-  method: 'GET',
-  mode: 'cors',
-  cache: 'default'
 }
 
 function addClient() {
@@ -32,7 +30,7 @@ function addClient() {
 
   cepClient = document.getElementById('input-cep').value
   stateClient = document.getElementById('input-state').value.toUpperCase()
-  streetClient = document.getElementById('input-street').value
+  publicAreaClient = document.getElementById('input-public-area').value
   districtClient = document.getElementById('input-district').value
   cityClient = document.getElementById('input-city').value
   numberClient = document.getElementById('input-number').value
@@ -45,7 +43,7 @@ function addClient() {
     address: {
       cep: cepClient,
       state: stateClient,
-      street: streetClient,
+      publicArea: publicAreaClient,
       district: districtClient,
       city: cityClient,
       number: numberClient
@@ -56,6 +54,34 @@ function addClient() {
   localStorage.setItem('client', jsonData)
 }
 
+// ViaCEP API
+function searchCep(cep) {
+  cep = cep.replace(/\D/g, '')
+
+  if (cep != '') {
+    let validacep = /^[0-9]{8}$/
+
+    if (validacep.test(cep)) {
+      fetch(`https://viacep.com.br/ws/${cep}/json`)
+        .then(response => response.json())
+        .then(data => {
+          if (!data.erro) {
+            displayAddress(data)
+          }
+        })
+        .catch(error => console.log(error))
+    }
+  }
+}
+
+function displayAddress(address) {
+  document.getElementById('input-public-area').value = address.logradouro
+  document.getElementById('input-district').value = address.bairro
+  document.getElementById('input-city').value = address.localidade
+  document.getElementById('input-state').value = address.uf
+}
+
+// PRODUCTS ======================================================
 let localStorageProducts = JSON.parse(localStorage.getItem('products'))
 let products = localStorageProducts !== null ? localStorageProducts : []
 
@@ -66,9 +92,7 @@ const quantityCart = document.getElementById('quantityCart')
 quantityCart.innerHTML =
   localStorageProducts !== null ? Object.keys(localStorageProducts).length : 0
 
-// API
-
-fetch('../assets/products.json', options)
+fetch('../assets/data/products.json', options)
   .then(response => response.json())
   .then(data => {
     createProducts(data)
@@ -98,13 +122,13 @@ function createProducts(products) {
     priceProduct.innerHTML = formattedPrice
     priceProduct.className = 'price'
 
-    let portionProduct = document.createElement('p')
+    let trancheQuantityProduct = document.createElement('p')
     formattedPrice = (product.price / 3).toLocaleString('pt-BR', {
       style: 'currency',
       currency: 'BRL'
     })
-    portionProduct.innerHTML = `até 3x de ${formattedPrice}`
-    portionProduct.className = 'portion'
+    trancheQuantityProduct.innerHTML = `até 3x de ${formattedPrice}`
+    trancheQuantityProduct.className = 'trancheQuantity'
 
     let addCartButton = document.createElement('button')
     addCartButton.type = 'submit'
@@ -116,14 +140,13 @@ function createProducts(products) {
     divProduct.appendChild(imgProduct)
     divProduct.appendChild(titleProduct)
     divProduct.appendChild(priceProduct)
-    divProduct.appendChild(portionProduct)
+    divProduct.appendChild(trancheQuantityProduct)
     divProduct.appendChild(addCartButton)
   })
 }
 
+// CART
 function addToCart() {
-  // localStorageProducts !== null ? localStorageProducts['products'] : []
-
   const infosProduct = this.parentElement.getElementsByTagName('p')
   const productId = infosProduct[0].innerHTML
   const productTitle = infosProduct[1].innerHTML
@@ -153,33 +176,4 @@ function clearCart() {
   quantityCart.innerHTML = products.length
   const allCartButtons = document.querySelectorAll('.addCartButton')
   allCartButtons.forEach(button => (button.disabled = false))
-}
-
-// VIACEP API
-
-function searchCep(valor) {
-  let cep = valor.replace(/\D/g, '')
-
-  //Verifica se campo cep possui valor informado.
-  if (cep != '') {
-    let validacep = /^[0-9]{8}$/
-
-    if (validacep.test(cep)) {
-      fetch(`https://viacep.com.br/ws/${cep}/json`)
-        .then(response => response.json())
-        .then(data => {
-          if (!data.erro) {
-            setAddressData(data)
-          }
-        })
-        .catch(error => console.log(error))
-    }
-  }
-}
-
-function setAddressData(data) {
-  document.getElementById('input-street').value = data.logradouro
-  document.getElementById('input-district').value = data.bairro
-  document.getElementById('input-city').value = data.localidade
-  document.getElementById('input-state').value = data.uf
 }

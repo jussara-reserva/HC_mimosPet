@@ -7,7 +7,7 @@
     <title>Mimo’s Pet</title>
 
     <!-- ICONS -->
-    <link rel="icon" type="favicon" href="assets/images/favicon2.ico" />
+    <link rel="icon" type="favicon" href="assets/images/favicon.ico" />
     <link rel="stylesheet" href="assets/fonts/style.css" />
 
     <!-- STYLES -->
@@ -50,22 +50,6 @@
             merece!
           </p>
         </div>
-        <!-- <div id="subscribe" class="subscribe">
-          <p>Inscreva-se e receba todas as nossas ofertas em primeira mão!</p>
-          <form id="subscribe-form" class="container">
-            <div id="name">
-              <label for="name">Nome:</label>
-              <input  id="input-name" type="text" placeholder="Digite o seu nome" required />
-            </div>
-
-            <div id="email">
-              <label for="name">E-mail:</label>
-              <input id="input-email" type="email" placeholder="Digite o seu e-mail" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
-            </div>
-
-            <button type="submit">Cadastrar</button>
-          </form>
-        </div> -->
       </section>
 
       <!-- OFFERTS -->
@@ -111,10 +95,11 @@
                 />
               </div>
               <div id="contact">
-                <label for="contact">Celular</label>
+                <label for="contact">Celular (com DDD)</label>
                 <input
                   id="input-contact"
                   type="text"
+                  maxlength="11"
                   placeholder="Apenas números"
                   required
                 />
@@ -181,30 +166,30 @@
                   <option value="TO">TO</option>
                 </select> -->
               </div>
-              <div id="street">
-                <label for="street">Logradouro</label>
+              <div id="public-area">
+                <label for="public-area">Logradouro</label>
                 <input
-                  id="input-street"
+                  id="input-public-area"
                   type="text"
                   placeholder="xxxxxxx xxxxxxxxxxx xxxxxx"
                   required
                 />
               </div>
               <div id="district">
-                <label for="district">xxxxxxx xxxxxxx</label>
+                <label for="district">Bairro</label>
                 <input
                   id="input-district"
                   type="text"
-                  placeholder="Digite o seu bairro"
+                  placeholder="Dxxxxxxx xxxxxxx"
                   required
                 />
               </div>
               <div id="city">
-                <label for="name">xxxxxxxxxxx</label>
+                <label for="name">Município</label>
                 <input
                   id="input-city"
                   type="text"
-                  placeholder="Digite o seu município"
+                  placeholder="xxxxxxxxxxx"
                   required
                 />
               </div>
