@@ -62,7 +62,7 @@ function searchCep(cep) {
     let validacep = /^[0-9]{8}$/
 
     if (validacep.test(cep)) {
-      fetch(`https://viacep.com.br/ws/${cep}/json`)
+      fetch(`https://viacep.com.br/ws/${cep}/json`, options)
         .then(response => response.json())
         .then(data => {
           if (!data.erro) {
@@ -92,7 +92,10 @@ const quantityCart = document.getElementById('quantityCart')
 quantityCart.innerHTML =
   localStorageProducts !== null ? Object.keys(localStorageProducts).length : 0
 
-fetch('../assets/data/products.json', options)
+fetch(
+  'https://my-json-server.typicode.com/jussararodrigues/hc-mimosPet/products',
+  options
+)
   .then(response => response.json())
   .then(data => {
     createProducts(data)

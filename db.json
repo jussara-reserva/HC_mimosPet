@@ -1,0 +1,129 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Ração Birbo para Cães Adultos de Médio e Grande Porte Sabor Frango",
+      "price": 12.99,
+      "category": "food",
+      "image": "https://staticpetz.stoom.com.br/fotos/1606934267534_mini.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Ração Birbo para Cães Adultos de Médio e Grande Porte Sabor Carne",
+      "price": 14.99,
+      "category": "food",
+      "image": "https://staticpetz.stoom.com.br/fotos/1606931123868_mini.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Ração Birbo para Cães Adultos Raças Pequenas Sabor Carne e Cereais",
+      "price": 17.99,
+      "category": "food",
+      "image": "https://staticpetz.stoom.com.br/fotos/1606935156757_mini.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Ração Golden Fórmula Light para Cães Adultos - 15kg",
+      "price": 155.99,
+      "category": "food",
+      "image": "https://staticpetz.stoom.com.br/fotos/1569877135198_mini.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Golden Power Training Filhote para Cães Sabor Frango e Arroz - 15kg",
+      "price": 149.99,
+      "category": "food",
+      "image": "https://staticpetz.stoom.com.br/fotos/1570024855951_mini.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Ração Golden Special Sabor Frango e Carne para Cães Adultos",
+      "price": 132.99,
+      "category": "food",
+      "image": "https://staticpetz.stoom.com.br/fotos/1614090145261_mini.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Antipulgas e Carrapatos Bravecto MSD para Cães de 4,5 a 10 kg",
+      "price": 174.17,
+      "category": "health",
+      "image": "https://staticpetz.stoom.com.br/fotos/1575296646776_mini.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Mectimax Agener União 3mg 1 Blíster com 4 comprimidos",
+      "price": 16.79,
+      "category": "health",
+      "image": "https://staticpetz.stoom.com.br/fotos/1591275116781_mini.jpg"
+    },
+    {
+      "id": 9,
+      "title": "Clinbacter Agener União 14 comprimidos para Cães e Gatos",
+      "price": 75.99,
+      "category": "health",
+      "image": "https://staticpetz.stoom.com.br/fotos/1603976491110_mini.jpg"
+    },
+    {
+      "id": 10,
+      "title": "Antipulgas Simparic 10 mg para cães 2,6 a 5 kg - Zoetis",
+      "price": 78.55,
+      "category": "health",
+      "image": "https://staticpetz.stoom.com.br/fotos/1502306801817_mini.jpg"
+    },
+    {
+      "id": 11,
+      "title": "Antipulgas Simparic 40 mg para cães 10,1 a 20 kg - Zoetis",
+      "price": 102.84,
+      "image": "https://staticpetz.stoom.com.br/fotos/1502309222713_mini.jpg"
+    },
+    {
+      "id": 12,
+      "title": "Antipulgas Simparic 80 mg para cães 20,1 a 40 kg - Zoetis",
+      "price": 119.49,
+      "category": "health",
+      "image": "https://staticpetz.stoom.com.br/fotos/1502310541692_mini.jpg"
+    },
+    {
+      "id": 13,
+      "title": "PetBall - Comedouro-Brinquedo para Cães",
+      "price": 28.9,
+      "category": "toys",
+      "image": "https://e220k6tgf8.execute-api.sa-east-1.amazonaws.com/v1/resize-image?img=/p/e/petball-petgames.jpg&size=170"
+    },
+    {
+      "id": 14,
+      "title": "Brinquedo Chalesco Pelúcia Macaco",
+      "price": 29.9,
+      "category": "toys",
+      "image": "https://e220k6tgf8.execute-api.sa-east-1.amazonaws.com/v1/resize-image?img=/m/a/macaco-chalesco.jpg&size=170"
+    },
+    {
+      "id": 15,
+      "title": "Mordedor Jambo Osso Silicone Boninho Frango",
+      "price": 20.9,
+      "category": "toys",
+      "image": "https://e220k6tgf8.execute-api.sa-east-1.amazonaws.com/v1/resize-image?img=/j/a/jambo-mordedor-frango_1.jpg&size=170"
+    },
+    {
+      "id": 16,
+      "title": "Pet Escova Vermelha Pet Games",
+      "price": 29.9,
+      "category": "toys",
+      "image": "https://e220k6tgf8.execute-api.sa-east-1.amazonaws.com/v1/resize-image?img=/p/e/pet-escova-vermelha-pet-games1_2.jpg&size=170"
+    },
+    {
+      "id": 17,
+      "title": "Flexibone Argola Dupla Azul",
+      "price": 29.9,
+      "category": "toys",
+      "image": "https://e220k6tgf8.execute-api.sa-east-1.amazonaws.com/v1/resize-image?img=/c/o/corda-dupla.jpg&size=170"
+    },
+    {
+      "id": 18,
+      "title": "Brinquedo Jambo Mordedor Corda Kelev Amarelo",
+      "price": 54.9,
+      "category": "toys",
+      "image": "https://e220k6tgf8.execute-api.sa-east-1.amazonaws.com/v1/resize-image?img=/k/e/kelev-amarelo.png&size=170"
+    }
+  ]
+}
